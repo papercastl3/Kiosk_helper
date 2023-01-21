@@ -1,0 +1,107 @@
+.kiosk{ /*키오스크 */
+    width:470px;
+    height :907px;
+    display:inline-block;
+}
+
+.top{ /*키오스크 위쪽*/
+    width: 470px;
+    height: 691px;
+    background: #373535;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display:flex;
+}
+
+.screen{ /*키오스크 화면*/
+    margin :auto;
+    width: 434px;
+    height: 656px;
+    background: #FFFCFC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.order_box{ /*하단 부 버튼 들 묶음 */
+    width: 434px;
+    height: 120px;
+    display :flex;
+   
+}
+#qr{
+    margin-left: 90px;
+    margin-right:4px;
+}
+
+.order_btns{ /* 주문하기. 언어선택, 도움기능*/
+    width: 120px;
+    height: 120px;
+    margin-right :90px;
+    margin-left:4px;
+}
+
+.order_btn{ /* 주문 버튼*/
+    box-sizing: border-box;
+    width: 120px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    text-align :center;
+    align-items: center;
+}
+
+.sub_btn{
+    font-size : 3px;
+    margin-top :8px;
+    display: inline-block;
+    width: 56px;
+    height: 27px;
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+}
+
+#lang{
+    margin-right: 4px;
+}
+
+.btn_box{ /* 매장 or 포장 가두고 있는 박스*/
+    display : flex;
+    justify-content: space-around;
+    margin-top: 150px;
+    width: 434px;
+    height: 230px;
+}
+
+.btn{ /*매장 or 주문 박스*/
+    width: 175px;
+    height: 230px;
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 9px;
+}
+
+.bottom{ /*키오스크 아래쪽*/
+    width: 470px;
+    height: 216px;
+    background: #373535;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.receipt_box{ /*영수증 나오는 곳*/
+    width: 94px;
+    height: 132px;
+}
+
+.card_box{ /*카드 투입구*/
+    width: 138px;
+    height: 154px;
+}
+

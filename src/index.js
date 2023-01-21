@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'; //입구 파일
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App'; //app.js component
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App /> 
   </React.StrictMode>
 );
 
