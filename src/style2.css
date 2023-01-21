@@ -34,6 +34,10 @@
     margin-right:4px;
 }
 
+#take_out{
+    margin-right:25px;
+}
+
 .order_btns{ /* 주문하기. 언어선택, 도움기능*/
     width: 120px;
     height: 120px;

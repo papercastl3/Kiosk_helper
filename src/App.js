@@ -4,6 +4,8 @@ import card from './card_barcode.svg'
 import qr_btn from './qr_point.svg'
 import ad1 from './ad1.svg'
 import ad2 from './ad2.svg'
+import eat_in from './eat_in.svg'
+import take_out from './take_out.svg'
 import './App.css';
 import './style2.css'
 
@@ -16,7 +18,7 @@ function Kiosk(){ //Kiosk component => 사용자 정의 함수= > 컴포넌트�
       </div>
       <div class="bottom">
           <div class="receipt_box">
-              <img src={receipt_out} alt="영수증 나오는 곳"/>
+              <img src={receipt} alt="영수증 나오는 곳"/>
           </div>
           <div class="card_box">
               <img src={card} alt="카드 투입구"/>
@@ -52,21 +54,31 @@ function Screen(){ //초기화면 with ad
   );
 }
 
-function initial_screen(){
-  
-}
-
-function Screen2(){
+function Screen2(){ //매장 or 화면 선택
   return(
     <div class="screen">
+      <h1>ㄹㅇㄴㄹ</h1>
       <div class="btn_box">
-        <div class="btn">매장</div>
-        <div class="btn">포장</div>
+        <div class="btn">
+          <h1>매장</h1>
+          <img src={eat_in}/> 
+        </div>
+        <div class="btn">
+          <h1>포장</h1>
+          <img src={take_out} id="take_out"/> 
+        </div>
       </div>
     </div>
   );
 }
 
+function Screen3(){ //메인 화면
+  return(
+    <div class="screeen">
+      화면 3
+    </div>
+  )
+}
 function App() {
   return (
     <div className="App">
