@@ -14,6 +14,8 @@
 
 .screen{ /*키오스크 화면*/
     margin :auto;
+    text-align: center;
+    align-items: center;
     width: 434px;
     height: 656px;
     background: #FFFCFC;
@@ -21,6 +23,7 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between; 
+    white-space: pre-line
 }
 
 .order_box{ /*하단 부 버튼 들 묶음 */
@@ -37,7 +40,25 @@
 #take_out{
     margin-right:25px;
 }
-
+.lang_select_boxes{
+    width: 434px;
+    height: 32px;
+    display :flex;
+    justify-content: space-around ;
+}
+.lsb{
+    
+    box-sizing: border-box;
+    width: 152px;
+    height: 32px;
+    /* left: 560px;
+    top: 535px; */
+    margin-left: 18px;
+    margin-right: 18px;
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+}
 .order_btns{ /* 주문하기. 언어선택, 도움기능*/
     width: 120px;
     height: 120px;
@@ -74,9 +95,15 @@
 .btn_box{ /* 매장 or 포장 가두고 있는 박스*/
     display : flex;
     justify-content: space-around;
-    margin-top: 150px;
+    /* margin-top: 150px; */
     width: 434px;
     height: 230px;
+}
+
+.text_area{
+    margin-top :20px;
+    font-size: 15px;
+    margin-bottom : 40px;
 }
 
 .btn{ /*매장 or 주문 박스*/
