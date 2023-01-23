@@ -58,6 +58,7 @@
     background: #FFFFFF;
     border: 0.5px solid rgba(0, 0, 0, 0.5);
     border-radius: 6px;
+    text-align: center;
 }
 .order_btns{ /* 주문하기. 언어선택, 도움기능*/
     width: 120px;
@@ -94,16 +95,17 @@
 
 .btn_box{ /* 매장 or 포장 가두고 있는 박스*/
     display : flex;
-    justify-content: space-around;
+    justify-content: space-between;
     /* margin-top: 150px; */
     width: 434px;
     height: 230px;
 }
 
 .text_area{
-    margin-top :20px;
-    font-size: 15px;
-    margin-bottom : 40px;
+    margin-top :30px;
+    font-size: 18px;
+    font-weight: 250;
+    margin-bottom : 65px;
 }
 
 .btn{ /*매장 or 주문 박스*/
@@ -112,6 +114,30 @@
     background: #FFFFFF;
     border: 0.5px solid rgba(0, 0, 0, 0.5);
     border-radius: 9px;
+    margin:auto;
+}
+
+.footer_box{
+    display:flex;
+    height :76px;
+    width: 434px;
+    justify-content:space-around;
+}
+.back_btns{
+    display: flex;
+    justify-content:space-between;
+    width :260px;
+    height:76px;
+}
+.back_btn{
+    width: 126px;
+    height: 20px;
+    left: 653px;
+    top: 679px;
+
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
 }
 
 .bottom{ /*키오스크 아래쪽*/
