@@ -15,7 +15,7 @@ function Kiosk(){ //Kiosk component => 사용자 정의 함수= > 컴포넌트�
             <Routes>
               <Route path='/' element={<Screen/>} /> {/* 초기화면 with ad */}
               <Route path='/screen2' element={<Screen2/>} /> {/* 매장 or 포장 선택 화면*/}
-              <Route path='/menu' element={<Screen3/>} /> {/* 메뉴판 */}
+              <Route path='/menu/*' element={<Screen3/>} /> {/* 메뉴판 */}
             </Routes>
           </div>
           <div className="bottom">

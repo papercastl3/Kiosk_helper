@@ -50,7 +50,7 @@
 
 .lsb{
     box-sizing: border-box;
-    width: 175px;
+    width: 152px;
     height: 32px;
     display:flex;
     justify-content: center;
@@ -102,19 +102,19 @@
     /* margin-top: 150px; */
     width: 434px;
     height: 230px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .text_area{
     margin-top :30px;
     font-size: 18px;
     font-weight: 250;
-    margin-bottom : 65px;
+    margin-bottom : 40px;
 }
 
 .btn{ /*매장 or 주문 박스*/
-    width: 175px;
-    height: 230px;
+    width: 152px;
+    height: 200px;
     background: #FFFFFF;
     border-style: inset;
     /* border: 0.5px solid rgba(0, 0, 0, 0.5); */
@@ -125,9 +125,10 @@
 
 .footer_box{
     display:flex;
-    height :76px;
+    height :100px;
     width: 434px;
     justify-content:space-around;
+    align-items: flex-end;
 }
 
 .footer_btns{

@@ -2,8 +2,6 @@ import React from "react";
 import {useNavigate} from 'react-router-dom';
 import {useState} from 'react'
 import qr_btn_s from './qr_btn_s.svg'
-import ad1 from './ad1.svg'
-import ad2 from './ad2.svg'
 import eat_in from './eat_in.svg'
 import take_out from './take_out.svg'
 import logo from './mc_logo.svg'
@@ -21,7 +19,7 @@ function Screen2(){ //매장 or 포장 선택 화면
       if(!EiClicked){ 
         setEiClicked(true);
         setToClicked(false);
-        navigate('/menu');
+        navigate('/menu/home');
       }
     }
   
@@ -29,7 +27,7 @@ function Screen2(){ //매장 or 포장 선택 화면
       if(!ToClicked){ 
         setToClicked(true);
         setEiClicked(false);
-        navigate('/menu');
+        navigate('/menu/home');
       }
     }
   
@@ -48,19 +46,19 @@ function Screen2(){ //매장 or 포장 선택 화면
     }
     return(
       <div className="screen">
-        <img src={logo} width ="18px" height="18px" style={{marginTop:"20px"}}></img>
+        <img src={logo} width ="18px" height="18px" style={{marginTop:"20px"}} alt="로고"></img>
         <div style={{fontSize :"30px",fontWeight :"550"}}>식사 장소를 {'\n'} 선택해 주세요</div>
         <div className="btn_box">
           <div className="btn" id="Ei" style={{border: EiClicked ? '2px solid #FFBC0D':' 0.5px solid rgba(0, 0, 0, 0.5)'}} onClick={()=>EiClickEvent()} >
             <div className="text_area">매장</div>
-            <img src={eat_in}/> 
+            <img src={eat_in} alt="매장 이미지"/> 
           </div>
           <div className="btn" id="To" style={{border: ToClicked ? '2px solid #FFBC0D':' 0.5px solid rgba(0, 0, 0, 0.5)'}} onClick={()=>ToClickEvent()}>
             <div className="text_area">포장</div>
-            <img src={take_out} id="take_out"/> 
+            <img src={take_out} alt="포장 이미지"/> 
           </div>
         </div>
-        <div style={{fontSize:"10px",fontWeight :"530"}}>
+        <div style={{fontSize:"10px",fontWeight :"530", marginBottom:"20px"}}>
           언어 선택
         </div>
         <div className = "lang_select_boxes">
@@ -72,14 +70,14 @@ function Screen2(){ //매장 or 포장 선택 화면
           </div>
         </div>
         <div className="footer_box">
-          <img src={qr_btn_s} style={{marginLeft:"40px",marginRight:"15px"}}/>
+          <img src={qr_btn_s} style={{marginLeft:"40px",marginRight:"15px"}} alt="qr버튼"/>
           <div className="footer_btns"> 
             <div className="back_btns">
-              <div className="back_btn" onClick={()=>{navigate(-1)}}>처음으로</div>
+              <div className="back_btn" onClick={()=>{navigate('/')}}>처음으로</div>
               <div className="back_btn">도움기능...</div>
             </div>
             <div style={{width:"260px",height:"14px",display:"flex-start"}}>
-              <img src={nutri_text}/>
+              <img src={nutri_text} alt="영양정보"/>
             </div>
         </div>
         </div>
