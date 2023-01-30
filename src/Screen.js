@@ -1,8 +1,8 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
-import qr_btn from './qr_btn_m.svg'
-import ad1 from './ad1.svg'
-import ad2 from './ad2.svg'
+import qr_btn from './img/qr_btn_m.svg'
+import ad1 from './img/ad1.svg'
+import ad2 from './img/ad2.svg'
 
 function Screen(){ //초기화면 with ad
   let navigate =useNavigate();

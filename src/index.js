@@ -1,6 +1,6 @@
 import React from 'react'; //입구 파일
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './css/index.css';
 import App from './App'; //app.js component
 import reportWebVitals from './reportWebVitals';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import receipt from './receipt.svg'
-import receipt_out from './receipt2.svg'
-import card from './card_barcode.svg'
+import receipt from './img/receipt.svg'
+import receipt_out from './img/receipt2.svg'
+import card from './img/card_barcode.svg'
 import Screen from './Screen.js'
 import Screen2 from './Screen2.js'
 import Screen3 from './Screen3.js'

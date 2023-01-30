@@ -1,11 +1,11 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom';
 import {useState} from 'react'
-import qr_btn_s from './qr_btn_s.svg'
-import eat_in from './eat_in.svg'
-import take_out from './take_out.svg'
-import logo from './mc_logo.svg'
-import nutri_text from './nutri_text.svg'
+import qr_btn_s from './img/qr_btn_s.svg'
+import eat_in from './img/eat_in.svg'
+import take_out from './img/take_out.svg'
+import logo from './img/mc_logo.svg'
+import nutri_text from './img/nutri_text.svg'
 
 function Screen2(){ //매장 or 포장 선택 화면
     let navigate =useNavigate();

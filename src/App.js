@@ -1,7 +1,7 @@
 import React from 'react';
 import Kiosk from './Kiosk.js'
-import './App.css';
-import './style2.css'
+import './css/App.css';
+import './css/Screen.css'
 
 function App() {
   return (

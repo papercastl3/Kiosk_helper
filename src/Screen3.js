@@ -1,8 +1,8 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom';
-import logo from './mc_logo.svg'
-import  './Screen3.css'
+import logo from './img/mc_logo.svg'
+import  './css/Screen3.css'
 import CategoryMenu from './CategoryMenu'
 import HomeMenu from './HomeMenu.js'
 import Recommended from './Recommended'

@@ -1,0 +1,72 @@
+.rightMenu{
+    width:300px;
+    height: 570px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+   
+}
+
+.menuBox{
+    display: flex;
+    box-sizing: border-box;
+    width: 278px;
+    height: 90px;
+    /* background: #FFFFFF;
+    border: 0.5px solid #B2A5A5;
+    border-radius: 2px; */
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.adBox{
+    box-sizing: border-box;
+    width: 278px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 0.5px solid #B2A5A5;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    }
+
+.menuCategory{
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: left;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    width :137px;
+    height :90px;
+    background: #FFFFFF;
+    border: 0.5px solid #B2A5A5;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.gridContainer{
+    margin-bottom: 10px;
+    display:grid;
+    width:278px;
+    row-gap:6px;
+    column-gap:6px;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+}
+
+.menuSelectBox{
+    height: 110px;
+    background: #FFFFFF;
+    border: 0.5px solid #B2A5A5;
+    border-radius: 2px;
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
