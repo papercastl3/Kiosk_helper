@@ -18,7 +18,7 @@ function CategoryMenu() {
         <div className="logoBox">
             <img src={logo} width="74px" height="49px" alt="로고" />
         </div>
-        <div className="categoryBox"  onClick={()=>{navigate('/menu/home');}}>
+        <div className="categoryBox"  onClick={()=>{navigate('/menu');}}>
             <img src={img1} width="18px" height="18px" style={{marginLeft :"5px"}} />
             <div className="categoryName">홈</div>
             {/* style={{ textDecoration: "underline" ,textUnderlinePosition:"under", textDecorationColor :"#FFBC0D"}} */}

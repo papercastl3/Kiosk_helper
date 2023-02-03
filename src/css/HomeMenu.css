@@ -1,6 +1,6 @@
 .rightMenu{
     width:300px;
-    height: 570px;
+    height: 556px;
     display: flex;
     flex-direction: column;
     overflow: scroll;

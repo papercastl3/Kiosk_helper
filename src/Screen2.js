@@ -19,7 +19,7 @@ function Screen2(){ //매장 or 포장 선택 화면
       if(!EiClicked){ 
         setEiClicked(true);
         setToClicked(false);
-        navigate('/menu/home');
+        navigate('/menu');
       }
     }
   
@@ -27,7 +27,7 @@ function Screen2(){ //매장 or 포장 선택 화면
       if(!ToClicked){ 
         setToClicked(true);
         setEiClicked(false);
-        navigate('/menu/home');
+        navigate('/menu');
       }
     }
   

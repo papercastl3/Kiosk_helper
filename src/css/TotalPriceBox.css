@@ -8,26 +8,48 @@
     position: relative;
 }
 
-.price{
+.priceBox{
     width:260px;
+    height :35px;
+    margin-bottom: 3px;
     display: flex;
-    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.quantity{
+    font-size: 0.5rem;
+    color: #FFFFFF;
+    position :absolute;
+    left :187.5px;
+    bottom :75.5px;
+
+}
+
+.price{
+    width :70px;
+    height: 22px;
+    margin-top: 5px;
+    text-align: left;
+    align-items: flex-end;
 }
 
 .orderChkBtn{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 134px;
+    width: 150px;
     height: 27px;
-    background: rgba(255, 200, 4, 0.5);
+    background: #FFCC00;
+    border: 0.8px solid #FFD851;
     border-radius: 3px;
-    font-size:10px;
+    font-size: 7px;
+    opacity: 25%;
 }
 
-.footer_btns{
+.footer_btns2{
     width: 260px;
-    height :76px;
+    height :86px;
 }
 
 .back_btns2{

@@ -49,7 +49,7 @@ function HomeMenu() {
         </div>
         <h1 style={{textAlign:"left", fontSize:"15px",marginTop:"5px"}}>인기 메뉴</h1>
         <div className="gridContainer">
-            <div className="menuSelectBox">
+            <div className="menuSelectBox" value="4900">
                 <div>
                     <img src={bg1} width="85px" height="60px"/>
                     <div>빅맥™ ® </div>
