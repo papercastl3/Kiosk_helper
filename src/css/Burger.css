@@ -19,13 +19,13 @@
 }
 
 .burgerGrid{
-    height: 400px;
+    /* height: 400px; */
+    margin-right: 10px;
     display: flex;
     flex-direction: column;
     overflow: scroll;
     overflow-x: hidden;
     margin-top: 10px;
-    margin-bottom: 10px;
     display:grid;
     width:278px;
     row-gap:6px;
@@ -42,6 +42,6 @@
     font-size: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }

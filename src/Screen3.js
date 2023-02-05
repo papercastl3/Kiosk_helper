@@ -1,8 +1,7 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom';
-import logo from './img/mc_logo.svg'
 import  './css/Screen3.css'
 import CategoryMenu from './CategoryMenu'
 import HomeMenu from './HomeMenu.js'
@@ -18,51 +17,54 @@ import HappyMeal from './HappyMeal'
 
 import TotalPriceBox from './TotalPriceBox.js'
 
-function Screen3() {
-    const burgerInfos={
-        bigmac : {
-            name :"빅맥™",
-            price : 4900,
-            setPrice : 5300,
-            kalories : 594,
-        },
-        shanghai : {
-            name :"맥스파이시® 상하이 버거",
-            price : 4900,
-            kalories : 494,
-        },
-        double_quarter : {
-            name :"더블 쿼터파운더® 치즈",
-            price : 4900,
-            kalories : 494,
-        },
-        shanghai : {
-            name :"더블 쿼터파운더® 치즈",
-            price : 4900,
-            kalories : 494,
-        },
-        shanghai : {
-            name :"맥스파이시® 상하이 버거",
-            price : 4900,
-            kalories : 494,
-        },
-        shanghai : {
-            name :"맥스파이시® 상하이 버거",
-            price : 4900,
-            kalories : 494,
-        },
-        shanghai : {
-            name :"맥스파이시® 상하이 버거",
-            price : 4900,
-            kalories : 494,
-        },
-        shanghai : {
-            name :"맥스파이시® 상하이 버거",
-            price : 4900,
-            kalories : 494,
-        },
+// export const Screen3Context= createContext();
 
-    }
+const burgerInfos={
+    bigmac : {
+        name :"빅맥™",
+        price : "4900",
+        setPrice : "5300",
+        kalories : 594,
+        img_src :"./img/빅맥.png"
+    },
+    shanghai : {
+        name :"맥스파이시® 상하이 버거",
+        price : 4900,
+        kalories : 494,
+    },
+    double_quarter : {
+        name :"더블 쿼터파운더® 치즈",
+        price : 4900,
+        kalories : 494,
+    },
+    shanghai : {
+        name :"더블 쿼터파운더® 치즈",
+        price : 4900,
+        kalories : 494,
+    },
+    shanghai : {
+        name :"맥스파이시® 상하이 버거",
+        price : 4900,
+        kalories : 494,
+    },
+    shanghai : {
+        name :"맥스파이시® 상하이 버거",
+        price : 4900,
+        kalories : 494,
+    },
+    shanghai : {
+        name :"맥스파이시® 상하이 버거",
+        price : 4900,
+        kalories : 494,
+    },
+    shanghai : {
+        name :"맥스파이시® 상하이 버거",
+        price : 4900,
+        kalories : 494,
+    },
+
+}
+function Screen3() {
     // const [orders,setOrders]=useState([]);
     // const [totalPrice,setTotalPrice]=useState(0);
     // const [price,setPrice]= useState(0);
