@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './css/HomeMenu.css'
 
-function HomeMenu() {
+function HomeMenu({clicked,setorder}) {
     let navigate=useNavigate();
     return (
     <div className="rightMenu">
@@ -40,22 +40,22 @@ function HomeMenu() {
         <div className="gridContainer">
             <div className="menuSelectBox" value="4900">
                 <div>
-                    <img loading="lazy" src="/images/상하이.png" width="85px" height="60px"/>
-                    <div>빅맥™ ® </div>
+                    <img loading="lazy" src="/images/빅맥.png" width="85px" height="60px"/>
+                    <div style={{ display:"flex",height:"26.67px",width :"72px",alignItems:"flex-end",fontWeight :"500",textAlign:"left",margin:"auto"}}>빅맥™ ® </div>
                     <div style={{fontWeight: "700"}}>₩4,900 594Kcal</div>
                 </div>
             </div>
             <div className="menuSelectBox">
                 <div>
                     <img loading="lazy" src="/images/상하이.png" width="85px" height="60px"/>
-                    <div>맥스파이시® 상하이 버거</div>
+                    <div style={{ display:"flex",height:"26.67px",width :"72px",alignItems:"flex-end",fontWeight :"500",textAlign:"left",margin:"auto"}}>맥스파이시® 상하이 버거</div>
                     <div style={{fontWeight: "700"}}>₩4,900 494Kcal</div>
                 </div>
             </div>
             <div className="menuSelectBox">
                 <div>
-                    <img loading="lazy" src="/images/상하이.png" width="85px" height="60px"/>
-                    <div>치킨 토마토 스낵랩</div>
+                    <img loading="lazy" src="/images/치토스.png" width="85px" height="60px"/>
+                    <div style={{ display:"flex",height:"26.67px",width :"72px",alignItems:"flex-end",fontWeight :"500",textAlign:"left",margin:"auto"}}>치킨 토마토 스낵랩</div>
                     <div style={{fontWeight: "700"}}>₩2,200 264Kcal</div>
                 </div>
             </div>

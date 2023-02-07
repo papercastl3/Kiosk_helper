@@ -1,7 +1,9 @@
 import React from 'react'
 import './css/Burger.css'
-import Selected_burger from './Selected_burger'
-function Burger() {
+import SelectedMenu from './SelectedMenu';
+import { useState } from 'react';
+// import Selected_burger from './Selected_burger'
+function Burger({clicked, setOrder}) {
   const burgerInfos=[
     {
       name :"더블 쿼터파운더® 치즈",
@@ -141,32 +143,28 @@ function Burger() {
       calory : "149",
       img_src :"/images/햄버거.png"
     },
-  ]
+  ];
   return (
     <div className="rightMenu" style={{overflowY:"hidden"}}>
       
       <h1 style={{textAlign:"left", marginBottom:"10px"}}>버거</h1>
       <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}>아래에서 세부메뉴를 확인하세요</div>
       <div className="burgerCategoryGrid">
-        <div className="burgerCategory">전체</div>
+        <div className="burgerCategory" style={{boxShadow: "inset 0px 2px 2px rgba(0, 0, 0, 0.35)"}}>전체</div>
         <div className="burgerCategory">불고기</div>
         <div className="burgerCategory">치킨</div>
         <div className="burgerCategory">비프</div>
         <div className="burgerCategory">씨푸드</div>
         <div className="burgerCategory">그외</div>
       </div>
-      <div className="burgerGrid" style={{}}>
-        {burgerInfos.map((v) =>{
-          return(
-            <div className="menuSelectBox" onClick={()=>{console.log(v)}}>
-              <div>
-                <img src={v.img_src} width="85px" height="60px"/>
-                <div style={{ display:"flex",height:"26.67px",width :"72px",alignItems:"flex-end",fontWeight :"500",textAlign:"left",margin:"auto"}}>{v.name} </div>
-                <div style={{fontWeight: "700"}}>₩{v.price} {v.calory}Kcal</div>
-            </div>
-          </div> 
-          );
-        })}
+      <div className="gridWrap">
+        <div className="burgerGrid">
+          {burgerInfos.map((v) =>{
+            return(
+              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder}/>
+            );
+          })}
+        </div>
       </div>    
     </div>
   )

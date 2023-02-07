@@ -4,6 +4,7 @@
     row-gap:6px;
     column-gap:6px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 5px;
 }
 
 .burgerCategory{
@@ -16,6 +17,12 @@
     background: #FFFFFF;
     border: 1px solid #E4DCDC;
     border-radius: 14px;
+    
+}
+.gridWrap{
+    width :"300px";
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .burgerGrid{
@@ -23,8 +30,6 @@
     margin-right: 10px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
-    overflow-x: hidden;
     margin-top: 10px;
     display:grid;
     width:278px;

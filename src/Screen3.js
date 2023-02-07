@@ -16,54 +16,10 @@ import Beverage from './Beverage'
 import HappyMeal from './HappyMeal'
 
 import TotalPriceBox from './TotalPriceBox.js'
+import DetailedOrder from './DetailedOrder';
 
 // export const Screen3Context= createContext();
 
-const burgerInfos={
-    bigmac : {
-        name :"빅맥™",
-        price : "4900",
-        setPrice : "5300",
-        kalories : 594,
-        img_src :"./img/빅맥.png"
-    },
-    shanghai : {
-        name :"맥스파이시® 상하이 버거",
-        price : 4900,
-        kalories : 494,
-    },
-    double_quarter : {
-        name :"더블 쿼터파운더® 치즈",
-        price : 4900,
-        kalories : 494,
-    },
-    shanghai : {
-        name :"더블 쿼터파운더® 치즈",
-        price : 4900,
-        kalories : 494,
-    },
-    shanghai : {
-        name :"맥스파이시® 상하이 버거",
-        price : 4900,
-        kalories : 494,
-    },
-    shanghai : {
-        name :"맥스파이시® 상하이 버거",
-        price : 4900,
-        kalories : 494,
-    },
-    shanghai : {
-        name :"맥스파이시® 상하이 버거",
-        price : 4900,
-        kalories : 494,
-    },
-    shanghai : {
-        name :"맥스파이시® 상하이 버거",
-        price : 4900,
-        kalories : 494,
-    },
-
-}
 function Screen3() {
     // const [orders,setOrders]=useState([]);
     // const [totalPrice,setTotalPrice]=useState(0);
@@ -77,27 +33,36 @@ function Screen3() {
     //         return [price,...prevState];
     //     })
     // }; 나중에 map함수 활용하기
-
+    let [order,setOrder]=useState({});
+    let [open,setOpen] =useState(false);
+    const clicked=menu=>{
+        let copy={...menu}
+        setOpen(true); 
+    }
+    const close =()=>{
+        setOpen(false);
+    } 
     return (
     <div className="screen">
         <div className="menuContainer">
             <CategoryMenu/>
             <Routes>
-                <Route path="/" element={<HomeMenu/>}/>
-                <Route path="/recommended" element={<Recommended/>}/>
-                <Route path="/mcLunch" element={<McLunch/>}/>
-                <Route path="/burger" element={<Burger/>}/>
-                <Route path="/happySnack" element={<HappySnack/>}/>
-                <Route path="/burger" element={<Burger/>}/>
-                <Route path="/happySnack" element={<HappySnack/>}/>
-                <Route path="/side" element={<Side/>}/>
-                <Route path="/coffee" element={<Coffee/>}/>
-                <Route path="/dessert" element={<Dessert/>}/>
-                <Route path="/beverage" element={<Beverage/>}/>
-                <Route path="/HappyMeal" element={<HappyMeal/>}/>
+                <Route path="/" element={<HomeMenu clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/recommended" element={<Recommended clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/mcLunch" element={<McLunch clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/burger" element={<Burger clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/happySnack" element={<HappySnack clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/burger" element={<Burger clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/happySnack" element={<HappySnack clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/side" element={<Side clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/coffee" element={<Coffee clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/dessert" element={<Dessert clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/beverage" element={<Beverage clicked={clicked} setOrder={setOrder}/>}/>
+                <Route path="/HappyMeal" element={<HappyMeal clicked={clicked} setOrder={setOrder}/>}/>
             </Routes>
         </div>
         <TotalPriceBox></TotalPriceBox>
+        {open && <DetailedOrder  close={close} order={order}/>}
     </div>
   )
 }

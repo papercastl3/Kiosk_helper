@@ -1,0 +1,15 @@
+.HappySnackGrid{
+    /* height: 400px; */
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-top: 10px;
+    display:grid;
+    width:278px;
+    row-gap:6px;
+    column-gap:6px;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+}

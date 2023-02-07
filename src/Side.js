@@ -1,42 +1,49 @@
 import React from 'react'
+import SelectedMenu from './SelectedMenu';
 
-function Side() {
+function Side({clicked,setOrder}) {
   const SideInfos=[
     {
-      name :"츄러스",
+      name :"코울슬로",
       price : "1,500",
-      calory : "145",
-      img_src :"/images/츄러스.png"
+      calory : "179",
+      img_src :"/images/코울슬로.png"
     },
     {
-      name :"치킨 토마토 스낵랩",
-      price : "2,000",
-      calory : "198",
-      img_src :"/images/치토스.png"
+      name :"상하이 치킨 스낵랩",
+      price : "2,400",
+      calory : "276",
+      img_src :"/images/상하이_스낵랩.png"
     },
     {
-      name :"불고기버거",
+      name :"골든 모짜렐라 치즈스틱",
       price : "1,500",
       calory : "292",
-      img_src :"/images/불고기.png"
+      img_src :"/images/치즈스틱.png"
     },
     {
-      name :"아메리카노(라지)",
+      name :"후렌치 후라이",
       price : "2,200",
       calory : "149",
-      img_src :"/images/아메리카노_L.png"
-  },
-    {
-      name :"카페라떼(라지)",
-      price : "2,200",
-      calory : "149",
-      img_src :"/images/카페라떼_L.png"
+      img_src :"/images/후렌치_후라이.png"
     },
     {
-        name :"카페라떼",
-        price : "2,200",
-        calory : "149",
-        img_src :"/images/빅맥.png"
+      name :"맥너겟®",
+      price : "2,200",
+      calory : "149",
+      img_src :"/images/맥너겟.png"
+    },
+    {
+      name :"맥스파이시®치킨텐더",
+      price : "2,200",
+      calory : "149",
+      img_src :"/images/치킨텐더.png"
+    },
+    {
+      name :"해쉬 브라운",
+      price : "2,200",
+      calory : "149",
+      img_src :"/images/해쉬_브라운.png"
     },
   ]
   return (
@@ -46,13 +53,7 @@ function Side() {
       <div className="burgerGrid" style={{overflowY:"hidden"}}>
         {SideInfos.map((v) =>{
           return(
-            <div className="menuSelectBox" onClick={()=>{console.log(v.name)}}>
-              <div>
-                <img src={v.img_src} width="85px" height="60px"/>
-                <div>{v.name} </div>
-                <div style={{fontWeight: "700"}}>₩{v.price} {v.calory}Kcal</div>
-            </div>
-          </div> 
+            <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder}/>
           );
         })}
       </div>

@@ -1,6 +1,7 @@
 import React from 'react'
+import SelectedMenu from './SelectedMenu';
 
-function McLunch() {
+function McLunch({clicked,setOrder}) {
   const McLunchInfos=[
     {
       name :"츄러스",
@@ -46,13 +47,7 @@ function McLunch() {
       <div className="burgerGrid" style={{overflowY:"hidden"}}>
         {McLunchInfos.map((v) =>{
           return(
-            <div className="menuSelectBox" onClick={()=>{console.log(v.name)}}>
-              <div>
-                <img src={v.img_src} width="85px" height="60px"/>
-                <div>{v.name} </div>
-                <div style={{fontWeight: "700"}}>₩{v.price} {v.calory}Kcal</div>
-            </div>
-          </div> 
+            <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder}/>
           );
         })}
       </div>
