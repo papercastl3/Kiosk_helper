@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Fade } from 'react-awesome-reveal';
 import './css/CategoryMenu.css'
 
 // const CategoryStyle=()=>css`
@@ -20,7 +21,9 @@ function CategoryMenu() {
     }
     let navigate =useNavigate();
     return (
+    <Fade>
     <div className="leftCategory">
+        
         <div className="logoBox">
             <img src="/images/mc_logo.svg" width="74px" height="49px" alt="로고" />
         </div>
@@ -85,7 +88,9 @@ function CategoryMenu() {
              textDecorationColor : clicked[9] ? "#FFBC0D" : "none", textDecorationThickness : clicked[9] ? "1.5px" : "none",
              fontWeight : clicked[9] ? "600" : "300"}}>해피밀</div>
         </div>
-    </div>
+        
+    </div> 
+    </Fade>
   )
 }
 

@@ -1,21 +1,76 @@
 import React from 'react'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Zoom } from 'react-awesome-reveal';
 import './css/DetailedOrder.css'
-function DetailedOrder({close,order}){ //단품 세트, 메뉴 디테일 고르기
-    return(
+
+const DecideSetDetail=({order,close})=>{ //세트 내용세부 선택
+  let navigate =useNavigate();
+  return(
+    <div className="Modal">
+      <div className=''>
+        <img src="/images/mc_logo.svg" widht="39px" height="26px"/>
+        <p>{order.name}</p>
+      </div>
+        <div className="footer_btns2"> 
+          <div className="cancelBox" onClick={close}>
+            <div>취소</div>
+          </div>
+          <div className="back_btns2">
+              <div className="back_btn" onClick={()=>{navigate('/')}}>처음으로</div>
+              <div className="back_btn">도움기능...</div>
+          </div>
+          <div style={{width:"260px",height:"14px",display:"flex-start"}}>
+              <img src="/images/nutri_text.svg" alt="영양정보"/>
+          </div>
+        </div>
+
+    </div>
+  );
+}
+
+
+
+const DecideSet=({order,open,close})=>{ // 세트 단품 선택 창
+  return(
       <div className="Modal">
+      <Zoom direction='In' duration="50">
         <div className="menuName">
           <img src="/images/mc_logo.svg" width="62px" height="42px"/>
-          <span>{order.name}</span>
+          <div style={{marginLeft:"10px",marginTop:"6px"}}>{order.name}</div>
         </div>
-        <div className="decideContainer">
-          <div className="Set_decide">
-            <img src={order.img_src} width="152px" height="113px"/>
-          </div>
-          <div className="Set_decide">
-            <img src={order.img_src} width="152px" height="113px"/>
-          </div>
+        <div className="decideSetBox">
+          <h2 style={{marginRight:"32px"}}>세트로 주문하시겠습니까?</h2>
+            <div className="decideContainer">
+              <div className="Set_decide" onClick={open}>
+                <img src={order.set_img_src} width="152px" height="113px"/>
+                <div>세트선택</div>
+              </div>
+              <div className="Set_decide">
+                <img src={order.img_src} width="152px" height="113px"/>
+                <div>단품선택</div>
+                <div>₩{order.price} {order.calory}Kcal</div>
+              </div>
+            </div>
+            <div className="cancelBox"onClick={()=>{close();}}>취소</div>
         </div>
-        <div className="cancelBox"onClick={()=>{close();}}>취소</div>
+        </Zoom>     
+      </div>   
+  
+  );
+}
+
+function DetailedOrder({close,order}){ //디테일한 메뉴 선택창 (맨처음) 고르기 하위 컴포넌트 컨트롤러 
+    let [renderInitial,setRenderInitial]=useState(true);
+    let [only,SetOnly] =useState(false);
+    let [chooseSet, setChooseSet]=useState(false);
+    const open=()=>{
+      setRenderInitial(false);
+    }
+    return(
+      <div className="Modal">
+        {renderInitial && <DecideSet order={order} open={open} close={close}/>}
+        {!renderInitial && <DecideSetDetail order={order} close={close}/>}
       </div>
     );
   }

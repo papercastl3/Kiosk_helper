@@ -1,6 +1,7 @@
 import React from 'react'
 import SelectedMenu from './SelectedMenu';
 import { useState } from 'react';
+import { Fade } from 'react-awesome-reveal';
 function Coffee({clicked,setOrder}) {
 const CoffeeInfos=[
     {
@@ -104,16 +105,17 @@ const CoffeeInfos=[
     <div className="rightMenu" style={{overflowY:"hidden"}}>
       <h1 style={{textAlign:"left", marginBottom:"10px"}}>커피</h1>
       <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}></div>
-      <div className="gridWrap">
+      <Fade className="gridWrap" direction="up"  duration="700" fraction={0} triggerOnce="true">
         <div className="HappySnackGrid" style={{overflowY:"hidden"}}>
           {CoffeeInfos.map((v) =>{
             return(
-              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder}/>
+              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
             );
           })}
         </div>
-      </div>
+      </Fade>
     </div>
+   
   )
 }
 export default Coffee

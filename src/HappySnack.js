@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import SelectedMenu from './SelectedMenu'
 import DetailedMenu from './DetailedOrder';
 import './css/HappySnack.css'
@@ -56,13 +57,15 @@ function HappySnack({clicked,setOrder}) {
     <div className="rightMenu" style={{overflowY:"hidden"}}>
       <h1 style={{textAlign:"left", marginBottom:"10px"}}>해피스낵</h1>
       <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}></div>
+      <Fade direction='up' fraction={0}  duration="700" triggerOnce="true">
       <div className="HappySnackGrid" style={{overflowY:"hidden"}}>
         {HappySnackInfos.map((v) =>{
             return(
-              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} />
+              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
             );
           })}
       </div>
+      </Fade>
     </div>
   )
 }

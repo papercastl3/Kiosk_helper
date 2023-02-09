@@ -1,6 +1,8 @@
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 import {useNavigate} from 'react-router-dom';
 import {useState} from 'react'
+import './css/Screen2.css';
 
 function Screen2(){ //매장 or 포장 선택 화면
     let navigate =useNavigate();
@@ -39,8 +41,9 @@ function Screen2(){ //매장 or 포장 선택 화면
         setEnClicked(false);
       }
     }
-    return(
+    return(      
       <div className="screen">
+        <Fade >
         <img src="/images/mc_logo.svg" width ="18px" height="18px" style={{marginTop:"20px"}} alt="로고"></img>
         <div style={{fontSize :"30px",fontWeight :"550"}}>식사 장소를 {'\n'} 선택해 주세요</div>
         <div className="btn_box">
@@ -76,7 +79,7 @@ function Screen2(){ //매장 or 포장 선택 화면
             </div>
         </div>
         </div>
-  
+        </Fade>
       </div>
     );
   }

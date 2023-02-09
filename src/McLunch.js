@@ -1,6 +1,6 @@
 import React from 'react'
 import SelectedMenu from './SelectedMenu';
-
+import { Fade } from 'react-awesome-reveal';
 function McLunch({clicked,setOrder}) {
   const McLunchInfos=[
     {
@@ -43,14 +43,16 @@ function McLunch({clicked,setOrder}) {
   return (
     <div className="rightMenu" style={{overflowY:"hidden"}}>
       <h1 style={{textAlign:"left", marginBottom:"10px"}}>맥런치</h1>
-      <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}>아래에서 세부메뉴를 확인하세요</div>
+      <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}></div>
+      <Fade direction='up' fraction={0}  duration="700" triggerOnce="true">
       <div className="burgerGrid" style={{overflowY:"hidden"}}>
         {McLunchInfos.map((v) =>{
           return(
-            <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder}/>
+            <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
           );
         })}
       </div>
+      </Fade>
     </div>
   )
 }

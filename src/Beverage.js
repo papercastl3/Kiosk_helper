@@ -1,5 +1,6 @@
 import React from 'react'
 import SelectedMenu from './SelectedMenu';
+import { Fade} from 'react-awesome-reveal';
 function Beverage({clicked,setOrder}) {
   const BeverageInfos=[
     {
@@ -86,14 +87,16 @@ function Beverage({clicked,setOrder}) {
     <div className="rightMenu" style={{overflowY:"hidden"}}>
       <h1 style={{textAlign:"left", marginBottom:"10px"}}>음료</h1>
       <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}></div>
-      <div className="HappySnackGrid" style={{overflowY:"hidden"}}>
-        {BeverageInfos.map((v) =>{
-          return(
-            <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder}/>
-          );
-        })}
+      <Fade className="gridWrap"  direction="up" fraction={1}  duration="700" triggerOnce="true">
+        <div className="HappySnackGrid"style={{overflowY:"hidden"}}>
+          {BeverageInfos.map((v) =>{
+            return(
+              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+            );
+          })}
+        </div>
+      </Fade>
       </div>
-    </div>
   )
 }
 export default Beverage

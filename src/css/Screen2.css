@@ -1,0 +1,60 @@
+.btn_box{ /* 매장 or 포장 가두고 있는 박스*/
+    display : flex;
+    justify-content: center;
+    /* margin-top: 150px; */
+    width: 434px;
+    height: 230px;
+    margin-bottom: 20px;
+}
+
+.text_area{
+    margin-top :30px;
+    font-size: 18px;
+    font-weight: 250;
+    margin-bottom : 40px;
+}
+
+.btn{ /*매장 or 주문 박스*/
+    width: 152px;
+    height: 200px;
+    background: #FFFFFF;
+    border-style: inset;
+    /* border: 0.5px solid rgba(0, 0, 0, 0.5); */
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer_box{
+    display:flex;
+    height :100px;
+    width: 434px;
+    justify-content:space-around;
+    align-items: flex-end;
+}
+
+.footer_btns{
+    width: 260px;
+    height :76px;
+}
+
+.back_btns{
+    margin-top:28px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content:space-between;
+    width :260px;
+    height:20px;
+}
+
+.back_btn{
+    width: 126px;
+    height: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    font-size:8px;
+}

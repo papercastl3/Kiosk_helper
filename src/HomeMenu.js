@@ -1,12 +1,58 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './css/HomeMenu.css'
+import { Fade,Slide } from 'react-awesome-reveal';
+import SelectedMenu from './SelectedMenu';
 
-function HomeMenu({clicked,setorder}) {
+const PopularInfos =[
+    {
+        name :"빅맥®",
+        price : "4,900",
+        set_price : "6,200",
+        calory : "583",
+        set_calory : "1,101~1250",
+        img_src :"/images/빅맥.png",
+        set_img_src:"/images/빅맥세트.png"
+      },
+      {
+        name :"맥스파이시® 상하이 버거",
+        price : "4,900",
+        set_price : "6,200",
+        calory : "494",
+        img_src :"/images/상하이.png",
+        set_img_src:"/images/상하이세트.png"
+      },
+      {
+        name :"베이컨 토마토 디럭스",
+        price : "5,800",
+        set_price : "7,400",
+        calory : "636",
+        img_src :"/images/베토디.png",
+        set_img_src:"/images/베토디세트.png"
+      },
+      {
+        name :"1955® 버거",
+        price : "6,000",
+        set_price : "6,000",
+        calory : "537",
+        img_src :"/images/1955.png",
+        set_img_src:"/images/1955세트.png"
+      },
+      {
+        name :"슈비 버거",
+        price : "5,800",
+        set_price : "7,400",
+        calory : "483",
+        img_src :"/images/슈비.png",
+        set_img_src:"/images/슈비세트.png"
+      },
+]
+function HomeMenu({clicked,setOrder}) {
     let navigate=useNavigate();
     return (
     <div className="rightMenu">
         <h1 style={{textAlign:"left", fontSize:"15px",marginTop:"40px"}}>메뉴 알아보기</h1>
+        <Fade direction="up" fraction={0}  duration="700" triggerOnce="true">
         <div className="menuBox">
             <div className="menuCategory" onClick={()=>{navigate('/menu/recommended')}}>
                 <div>추천메뉴</div>
@@ -38,33 +84,13 @@ function HomeMenu({clicked,setorder}) {
         </div>
         <h1 style={{textAlign:"left", fontSize:"15px",marginTop:"5px"}}>인기 메뉴</h1>
         <div className="gridContainer">
-            <div className="menuSelectBox" value="4900">
-                <div>
-                    <img loading="lazy" src="/images/빅맥.png" width="85px" height="60px"/>
-                    <div style={{ display:"flex",height:"26.67px",width :"72px",alignItems:"flex-end",fontWeight :"500",textAlign:"left",margin:"auto"}}>빅맥™ ® </div>
-                    <div style={{fontWeight: "700"}}>₩4,900 594Kcal</div>
-                </div>
-            </div>
-            <div className="menuSelectBox">
-                <div>
-                    <img loading="lazy" src="/images/상하이.png" width="85px" height="60px"/>
-                    <div style={{ display:"flex",height:"26.67px",width :"72px",alignItems:"flex-end",fontWeight :"500",textAlign:"left",margin:"auto"}}>맥스파이시® 상하이 버거</div>
-                    <div style={{fontWeight: "700"}}>₩4,900 494Kcal</div>
-                </div>
-            </div>
-            <div className="menuSelectBox">
-                <div>
-                    <img loading="lazy" src="/images/치토스.png" width="85px" height="60px"/>
-                    <div style={{ display:"flex",height:"26.67px",width :"72px",alignItems:"flex-end",fontWeight :"500",textAlign:"left",margin:"auto"}}>치킨 토마토 스낵랩</div>
-                    <div style={{fontWeight: "700"}}>₩2,200 264Kcal</div>
-                </div>
-            </div>
-            <div className="menuSelectBox">1</div>
-            <div className="menuSelectBox">1</div>
-            <div className="menuSelectBox">1</div>
-            <div className="menuSelectBox">1</div>
-            <div className="menuSelectBox">1</div>
+            {PopularInfos.map((v) =>{
+                return(
+                <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+                );
+            })}
         </div>
+        </Fade>
     </div>
   )
 }

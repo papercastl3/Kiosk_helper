@@ -1,6 +1,6 @@
 import React from 'react'
 import SelectedMenu from './SelectedMenu';
-
+import { Fade } from 'react-awesome-reveal';
 function Side({clicked,setOrder}) {
   const SideInfos=[
     {
@@ -50,13 +50,15 @@ function Side({clicked,setOrder}) {
     <div className="rightMenu" style={{overflowY:"hidden"}}>
       <h1 style={{textAlign:"left", marginBottom:"10px"}}>사이드</h1>
       <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}></div>
-      <div className="burgerGrid" style={{overflowY:"hidden"}}>
-        {SideInfos.map((v) =>{
-          return(
-            <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder}/>
-          );
-        })}
-      </div>
+      <Fade direction='up' fraction={0}  duration="700" triggerOnce="true">
+        <div className="burgerGrid" style={{overflowY:"hidden"}}>
+          {SideInfos.map((v) =>{
+            return(
+              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+            );
+          })}
+        </div>
+      </Fade>
     </div>
   )
 }
