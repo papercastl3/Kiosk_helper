@@ -32,9 +32,10 @@ function Screen3() {
     //     setTotalPrice((prevState)=>{
     //         return [price,...prevState];
     //     })
-    // }; 나중에 map함수 활용하기
-    let [order,setOrder]=useState({});
-    let [open,setOpen] =useState(false);
+    let [totalPrice,setTotalPrice]=useState(0);
+    let [quantity,SetQuantity]=useState(0);
+    let [order,setOrder]=useState({}); //선택한 메뉴 저장
+    let [open,setOpen] =useState(false); //모달 창 여는 state
     const clicked=menu=>{
         let copy={...menu}
         setOpen(true); 
@@ -61,8 +62,9 @@ function Screen3() {
                 <Route path="/HappyMeal" element={<HappyMeal clicked={clicked} setOrder={setOrder}/>}/>
             </Routes>
         </div>
-        <TotalPriceBox></TotalPriceBox>
-        {open && <DetailedOrder  close={close} order={order}/>}
+        <TotalPriceBox price={totalPrice} quantity={quantity}/>
+        {open && <DetailedOrder  close={close} order={order}/>} 
+        {/* 모달창 */}
     </div>
   )
 }

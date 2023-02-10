@@ -52,3 +52,73 @@
     justify-content: center;
     align-items: center;
 }
+
+.littleModal{
+    box-sizing: border-box;
+    width: 262px;
+    height: 372px;
+    margin:  100px;
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.nutri{
+    box-sizing: border-box;
+    width: 112px;
+    height: 24px;
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.PlusMinusWrap{
+    display: flex;
+}
+
+.Minus{
+    box-sizing: border-box;
+    width: 32px;
+    height: 31px;
+    background: #FFFFFF;
+    border: 2px solid rgba(204, 204, 201, 0.35);
+    border-radius: 5px 0px 0px 5px;
+    border-style: solid none solid solid;
+}
+.Number{
+    box-sizing: border-box;
+    width: 151px;
+    height: 31px;
+    background: #FFFFFF;
+    border: 2px solid #CCCCC9;
+}
+.Plus{
+    box-sizing: border-box;
+    width: 32px;
+    height: 31px;
+    background: #FFFFFF;
+    border: 2px solid #CCCCC9;
+    border-radius: 0px 5px 5px 0px;
+    border-style: solid solid solid none;
+}
+.Add{
+    box-sizing: border-box;
+    width: 262px;
+    height: 56px;
+    left: 593px;
+    top: 494px;
+    background: #FFBC0D;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 0px 0px 3px 3px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}

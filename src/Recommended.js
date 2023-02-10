@@ -11,7 +11,7 @@ function Recommended({clicked,setOrder}) {
       calory : "769",
       set_calory : "1,101~1250",
       img_src :"/images/더쿼치.png",
-      set_img_src :"/imges/더쿼치.png"
+      set_img_src:"/images/더쿼치세트.png"
     },
     {
       name :"쿼터파운더® 치즈 BBQ 베이컨",
@@ -20,7 +20,7 @@ function Recommended({clicked,setOrder}) {
       calory : "560",
       set_calory : "1,101~1250",
       img_src :"/images/쿼치베.png",
-      set_img_src :"/imges/쿼터파운더BBQ세트.png"
+      set_img_src:"/images/쿼터파운더BBQ세트.png"
     },
     {
       name :"쿼터파운더® 치즈",
@@ -29,7 +29,7 @@ function Recommended({clicked,setOrder}) {
       calory : "534",
       set_calory : "1,101~1250",
       img_src :"/images/쿼터파운더_치즈.png",
-      set_img_src :"/imges/쿼치세트.png"
+      set_img_src:"/images/쿼치세트.png"
     },
     {
       name :"맥크리스피™ 디럭스 버거",
@@ -38,7 +38,7 @@ function Recommended({clicked,setOrder}) {
       calory : "594",
       set_calory : "1,101~1250",
       img_src :"/images/맥크리스피_디럭스.png",
-      set_img_src :"/imges/맥디세트.png"
+      set_img_src:"/images/맥디세트.png"
     },
     {
       name :"맥크리스피™ 클래식 버거",
@@ -47,7 +47,7 @@ function Recommended({clicked,setOrder}) {
       calory : "584",
       set_calory : "1,101~1250",
       img_src :"/images/맥크리스피_클래식.png",
-      set_img_src :"/imges/맥클세트.png"
+      set_img_src:"/images/맥클세트.png"
     },
     {
       name :"빅맥®",

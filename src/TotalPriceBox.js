@@ -5,9 +5,9 @@ import { Fade } from 'react-awesome-reveal';
 import './css/TotalPriceBox.css'
 
 
-function TotalPriceBox() {
-  const [price,setPrcice] =useState(0);
-  const [quantity,setquantity] =useState(0); //상위 컴포너트에서 use context로 쓰자
+function TotalPriceBox({price,quantity}) {
+  // const [price,setPrcice] =useState(0);
+  // const [quantity,setquantity] =useState(0); //상위 컴포너트에서 use context로 쓰자
   let navigate=useNavigate();
   return (
     <Fade  duration={700} fraction={0}>
@@ -20,7 +20,9 @@ function TotalPriceBox() {
             <div className="price">
               ₩{price}
             </div>
-            <div className="orderChkBtn" style={{}}>
+            <div className="orderChkBtn" style={{
+              opacity : price===0 ? "25%" :"100%"
+            }}>
                 주문내역 확인 후 결제하기
             </div>
           </div>

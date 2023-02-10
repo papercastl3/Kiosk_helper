@@ -6,12 +6,11 @@ import {useNavigate} from 'react-router-dom';
 function Screen(){ //초기화면 with ad
   let navigate =useNavigate();
   const ad_src=["/images/ad1.svg","/images/ad2.svg"]
-    let [src,setSrc] =useState("/images/ad1.svg");
-    useEffect(() => {
-      const timer = setTimeout(() => console.log('Initial timeout!'), 1000);
-      return () => clearTimeout(timer);
+  let [src,setSrc] =useState("/images/ad1.svg");
+  useEffect(() => {
+    const timer = setTimeout(() => console.log('Initial timeout!'), 1000);
+    return () => clearTimeout(timer);
     }, []);
-
     return(
       <div className="screen">
         <Fade>
