@@ -21,7 +21,7 @@ function TotalPriceBox({price,quantity}) {
               ₩{price}
             </div>
             <div className="orderChkBtn" style={{
-              opacity : price===0 ? "25%" :"100%"
+              opacity : price==="0" ? "25%" :"100%"
             }}>
                 주문내역 확인 후 결제하기
             </div>

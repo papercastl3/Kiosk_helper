@@ -19,8 +19,9 @@ import TotalPriceBox from './TotalPriceBox.js'
 import DetailedOrder from './DetailedOrder';
 
 // export const Screen3Context= createContext();
-
+export const DataContext =createContext(null);
 function Screen3() {
+    
     // const [orders,setOrders]=useState([]);
     // const [totalPrice,setTotalPrice]=useState(0);
     // const [price,setPrice]= useState(0);
@@ -32,8 +33,23 @@ function Screen3() {
     //     setTotalPrice((prevState)=>{
     //         return [price,...prevState];
     //     })
-    let [totalPrice,setTotalPrice]=useState(0);
-    let [quantity,SetQuantity]=useState(0);
+    let [totalPrice,setTotalPrice]=useState("0");
+    let [totalQuantity,SetTotalQuantity]=useState(0);
+    const calculatePrice=(price)=>{
+        const copy =totalPrice;
+        const IntialTotalPrice=parseInt((copy).replace(",","")); //string 콤마 빼고 int형으로 변환
+        const AddedPrice =parseInt((price).replace(",","")); //string 콤마 빼고 int형으로 변환
+        let result =IntialTotalPrice + AddedPrice; //int형으로 형변환 후 계산
+        result=[result].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); //다시 문자열로 바꾸고, 콤마 추가
+        setTotalPrice(result);
+      };
+    // const SetTotalPriceCal=()=>{
+    //     const IntialTotalPrice=parseInt((totalPrice).replace(",","")); //string 콤마 빼고 int형으로 변환
+    //     const AddedPrice =parseInt((menu).replace(",","")); //string 콤마 빼고 int형으로 변환
+    //     const result =IntialTotalPrice + AddedPrice; //int형으로 형변환 후 계산
+    //     result=[result].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); //다시 문자열로 바꾸고, 콤마 추가
+    //     setTotalPrice(result);
+    // }
     let [order,setOrder]=useState({}); //선택한 메뉴 저장
     let [open,setOpen] =useState(false); //모달 창 여는 state
     const clicked=menu=>{
@@ -44,6 +60,7 @@ function Screen3() {
         setOpen(false);
     } 
     return (
+        <DataContext.Provider value={{totalPrice,setTotalPrice,totalQuantity, SetTotalQuantity,calculatePrice}}>
     <div className="screen">
         <div className="menuContainer">
             <CategoryMenu/>
@@ -62,10 +79,11 @@ function Screen3() {
                 <Route path="/HappyMeal" element={<HappyMeal clicked={clicked} setOrder={setOrder}/>}/>
             </Routes>
         </div>
-        <TotalPriceBox price={totalPrice} quantity={quantity}/>
+        <TotalPriceBox price={totalPrice} quantity={totalQuantity}/>
         {open && <DetailedOrder  close={close} order={order}/>} 
         {/* 모달창 */}
     </div>
+    </DataContext.Provider>
   )
 }
 

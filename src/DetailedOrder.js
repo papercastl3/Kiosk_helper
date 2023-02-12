@@ -1,14 +1,15 @@
 import React from 'react'
-import { useState} from 'react';
+import { useState,useEffect,useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import './css/DetailedOrder.css'
+import { DataContext } from './Screen3';
 
 const DecideSetDetail=({order,close})=>{ //세트 내용세부 선택
   let navigate = useNavigate();
   return(
     <div className="Modal">
-      <div className=''>
+      <div className='' style={{display:"flex"}}>
         <img src="/images/mc_logo.svg" widht="39px" height="26px"/>
         <p>{order.name}</p>
       </div>
@@ -30,9 +31,20 @@ const DecideSetDetail=({order,close})=>{ //세트 내용세부 선택
 }
 
 const DecideSingleDetail = ({order,close})=>{ //단품
+  const {SetTotalQuantity,calculatePrice} = useContext(DataContext);
   let [quantity,SetQuantity]= useState(1);
-  let price=order.price;
-  let calory=order.calory;
+  let price=[parseInt((order.price).replace(",","")*quantity)].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  let calory=order.calory*quantity;
+ 
+  const addQunatity=()=>{
+    SetQuantity(prev=>prev+1);
+  }
+  const subQunatity=()=>{
+    if(quantity>1){
+    SetQuantity(prev=>prev-1);
+    }
+  }
+
   return(
     <div>
       <div className='littleModal' >
@@ -43,12 +55,13 @@ const DecideSingleDetail = ({order,close})=>{ //단품
           </div>
           <div className='nutri'>영양정보</div>
           <div className="PlusMinusWrap">
-            <div className="Minus">-</div>
+            <div className="Minus" style={{border: quantity>1 ? "2px solid #CCCCC9":"2px solid rgba(204, 204, 201, 0.35)",borderStyle: "solid solid solid none"
+            }} onClick={subQunatity}>-</div>
             <div className="Number">{quantity}</div>
-            <div className="Plus">+</div>
+            <div className="Plus" onClick={addQunatity}>+</div>
           </div>
     
-        <div className='Add' onClick={()=>{close(); }}>장바구니추가</div>
+        <div className='Add' onClick={()=>{close(); calculatePrice(price); SetTotalQuantity(prev=>prev+quantity)}}>장바구니추가</div>
       </div> 
       <div style={{marginTop:"136px",marginLeft:"177px"}}>
         <div className="back_btns2">
