@@ -21,20 +21,11 @@ import DetailedOrder from './DetailedOrder';
 // export const Screen3Context= createContext();
 export const DataContext =createContext(null);
 function Screen3() {
-    
-    // const [orders,setOrders]=useState([]);
-    // const [totalPrice,setTotalPrice]=useState(0);
-    // const [price,setPrice]= useState(0);
 
-    // const countPrice=(e)=>{
-    //     setPrice(e.target.value+price);
-    // }
-    // const countPrice=()=>{
-    //     setTotalPrice((prevState)=>{
-    //         return [price,...prevState];
-    //     })
     let [totalPrice,setTotalPrice]=useState("0");
     let [totalQuantity,SetTotalQuantity]=useState(0);
+    let [totalOrderInfos,SetTotalOrderInfos]=useState([]);
+    let [fromHomeClicked,setFHC] =useState();
     const calculatePrice=(price)=>{
         const copy =totalPrice;
         const IntialTotalPrice=parseInt((copy).replace(",","")); //string 콤마 빼고 int형으로 변환
@@ -43,15 +34,9 @@ function Screen3() {
         result=[result].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); //다시 문자열로 바꾸고, 콤마 추가
         setTotalPrice(result);
       };
-    // const SetTotalPriceCal=()=>{
-    //     const IntialTotalPrice=parseInt((totalPrice).replace(",","")); //string 콤마 빼고 int형으로 변환
-    //     const AddedPrice =parseInt((menu).replace(",","")); //string 콤마 빼고 int형으로 변환
-    //     const result =IntialTotalPrice + AddedPrice; //int형으로 형변환 후 계산
-    //     result=[result].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); //다시 문자열로 바꾸고, 콤마 추가
-    //     setTotalPrice(result);
-    // }
     let [order,setOrder]=useState({}); //선택한 메뉴 저장
-    let [open,setOpen] =useState(false); //모달 창 여는 state
+    let [open,setOpen] =useState(false); //메뉴 주문 창 여는 state
+
     const clicked=menu=>{
         let copy={...menu}
         setOpen(true); 
@@ -60,7 +45,7 @@ function Screen3() {
         setOpen(false);
     } 
     return (
-        <DataContext.Provider value={{totalPrice,setTotalPrice,totalQuantity, SetTotalQuantity,calculatePrice}}>
+    <DataContext.Provider value={{totalPrice,setTotalPrice,totalQuantity, SetTotalQuantity,calculatePrice,fromHomeClicked,setFHC}}>
     <div className="screen">
         <div className="menuContainer">
             <CategoryMenu/>

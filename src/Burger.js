@@ -336,7 +336,7 @@ function Burger({clicked, setOrder}) {
     setBurgerCateogry(cat);
   }
   return (
-    <div className="rightMenu" style={{overflowY:"hidden"}}>
+    <div className="rightMenu" style={{overflow:"hidden"}}>
       
       <h1 style={{textAlign:"left", marginBottom:"10px"}}>버거</h1>
       <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}>아래에서 세부메뉴를 확인하세요</div>
@@ -349,53 +349,51 @@ function Burger({clicked, setOrder}) {
         <div className="burgerCategory" onClick={()=>SetCategory("씨푸드")} style={{ boxShadow:burgerCategory==="씨푸드" ? "inset 0px 2px 2px rgba(0, 0, 0, 0.35)" :"none"}}>씨푸드</div>
         <div className="burgerCategory" onClick={()=>SetCategory("그외")} style={{ boxShadow:burgerCategory==="그외" ? "inset 0px 2px 2px rgba(0, 0, 0, 0.35)" :"none"}}>그외</div>
       </div>
-      </Fade>
+      </Fade >
+      <Fade direction="up" fraction={0} triggerOnce="true" duration="700" className="gridWrap" style={{overflowY: (burgerCategory!="전체") ? "hidden" :"scroll"}}>
+          <div className="burgerGrid" >
+            {burgerCategory==="전체" && 
+            AllBurgerInfos.map((v) =>{
+              return(
+                <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+              );
+            })}
 
-      <Fade className="gridWrap"  direction="up" fraction={1} triggerOnce="true" duration="700"  style={{ overflowY: burgerCategory!="전체" ? "hidden" :"scroll"}}>
-        <div className="burgerGrid" >
-          {burgerCategory==="전체" && 
-          AllBurgerInfos.map((v) =>{
-            return(
-              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
-            );
-          })}
+            {burgerCategory==="불고기" && 
+            BulgogiBurgerInfos.map((v) =>{
+              return(
+                <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+              );
+            })}
 
-          {burgerCategory==="불고기" && 
-          BulgogiBurgerInfos.map((v) =>{
-            return(
-              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
-            );
-          })}
+            {burgerCategory==="치킨" && 
+            ChickenBurgerInfos.map((v) =>{
+              return(
+                <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+              );
+            })}
 
-          {burgerCategory==="치킨" && 
-          ChickenBurgerInfos.map((v) =>{
-            return(
-              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
-            );
-          })}
+            {burgerCategory==="비프" && 
+            BeefBurgerInfos.map((v) =>{
+              return(
+                <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+              );
+            })}
 
-          {burgerCategory==="비프" && 
-          BeefBurgerInfos.map((v) =>{
-            return(
-              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
-            );
-          })}
+            {burgerCategory==="씨푸드" && 
+            SeaFoodBurgerInfos.map((v) =>{
+              return(
+                <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+              );
+            })} 
 
-          {burgerCategory==="씨푸드" && 
-          SeaFoodBurgerInfos.map((v) =>{
-            return(
-              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
-            );
-          })} 
-
-          {burgerCategory==="그외" && 
-          OtherBurgerInfos.map((v) =>{
-            return(
-              <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
-            );
-          })} 
-
-        </div>
+            {burgerCategory==="그외" && 
+            OtherBurgerInfos.map((v) =>{
+              return(
+                <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+              );
+            })}
+          </div>
       </Fade>
     </div>
   )

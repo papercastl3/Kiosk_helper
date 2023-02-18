@@ -1,8 +1,10 @@
 import React from 'react'
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './css/HomeMenu.css'
 import { Fade,Slide } from 'react-awesome-reveal';
 import SelectedMenu from './SelectedMenu';
+import { DataContext } from './Screen3';
 
 const PopularInfos =[
     {
@@ -48,27 +50,29 @@ const PopularInfos =[
       },
 ]
 function HomeMenu({clicked,setOrder}) {
+    const {fromHomeClicked,setFHC} = useContext(DataContext); //useContextAPI 사용
     let navigate=useNavigate();
     return (
-    <div className="rightMenu">
+    <div className="rightMenu" style={{height:"556px"}}>
         <h1 style={{textAlign:"left", fontSize:"15px",marginTop:"40px"}}>메뉴 알아보기</h1>
         <Fade direction="up" fraction={0}  duration="700" triggerOnce="true">
+        <div >
         <div className="menuBox">
-            <div className="menuCategory" onClick={()=>{navigate('/menu/recommended')}}>
+            <div className="menuCategory" onClick={()=>{navigate('/menu/recommended');setFHC("추천메뉴");}}>
                 <div>추천메뉴</div>
                 <img loading="lazy" src="/images/추천메뉴_L.svg" />
             </div>
-            <div className="menuCategory" onClick={()=>{navigate('/menu/mcLunch')}}>
+            <div className="menuCategory" onClick={()=>{navigate('/menu/mcLunch'); setFHC("맥런치");}}>
                 <div>맥런치</div>
                 <img loading="lazy" src="/images/맥런치_L.svg" />
             </div>
         </div>
         <div className="menuBox">
-            <div className="menuCategory" onClick={()=>{navigate('/menu/happySnack')}}>
+            <div className="menuCategory" onClick={()=>{navigate('/menu/happySnack'); setFHC("해피스낵");}}>
                 <div>이달의{'\n'}해피스낵</div>
                 <img loading="lazy" src="/images/해피스낵_L.svg" />
             </div>
-            <div className="menuCategory" onClick={()=>{navigate('/menu/dessert')}}>
+            <div className="menuCategory" onClick={()=>{navigate('/menu/dessert'); setFHC("커피&디저트");}}>
                 <div>커피&디저트</div>
                 <img loading="lazy" src="/images/커피and디저트.svg" />
                 </div>
@@ -89,6 +93,7 @@ function HomeMenu({clicked,setOrder}) {
                 <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
                 );
             })}
+        </div>
         </div>
         </Fade>
     </div>

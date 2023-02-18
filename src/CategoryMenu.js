@@ -1,7 +1,8 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useEffect } from 'react'
+import { useState,useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Fade } from 'react-awesome-reveal';
+import { DataContext } from './Screen3';
 import './css/CategoryMenu.css'
 
 // const CategoryStyle=()=>css`
@@ -11,14 +12,40 @@ import './css/CategoryMenu.css'
 //     `;
 
 function CategoryMenu() {
+    const {fromHomeClicked,setFHC} =useContext(DataContext);
+    
     let [clicked,setClicked]=useState([true,false,false,false,false,false,false,false,false,false]);
 
     function catClicked(index){
+        setFHC(null);
         let copy =[...clicked];
         copy =[false,false,false,false,false,false,false,false,false,false];
         copy[index] = true;
         setClicked(copy);
     }
+    useEffect(() => {
+        if(fromHomeClicked==="추천메뉴"){
+            let copy =[...clicked];
+            copy =[false,true,false,false,false,false,false,false,false,false];
+            setClicked(copy);
+        }
+        else if(fromHomeClicked==="맥런치"){
+            let copy =[...clicked];
+            copy =[false,false,true,false,false,false,false,false,false,false];
+            setClicked(copy);
+        }
+        else if(fromHomeClicked==="해피스낵"){
+            let copy =[...clicked];
+            copy =[false,false,false,false,true,false,false,false,false,false];
+            setClicked(copy);
+        }
+        else if(fromHomeClicked==="커피&디저트"){
+            let copy =[...clicked];
+            copy =[false,false,false,false,false,false,false,true,false,false];
+            setClicked(copy);
+        }
+        }, [fromHomeClicked]);
+   
     let navigate =useNavigate();
     return (
     <Fade>
