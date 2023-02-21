@@ -68,7 +68,7 @@ function Dessert({clicked,setOrder}) {
     <div className="rightMenu" style={{overflowY:"hidden"}}>
       <h1 style={{textAlign:"left", marginBottom:"10px"}}>디저트</h1>
       <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}></div>
-      <Fade className="gridWrap"  direction="up" fraction={1}  duration="700" triggerOnce="true" style={{overflowY:"hidden"}}>
+      <Fade className="gridWrap"  direction="up" fraction={0}  duration="700" triggerOnce="true">
         <div className="HappySnackGrid"style={{overflowY:"hidden"}}>
           {DessertInfos.map((v) =>{
             return(

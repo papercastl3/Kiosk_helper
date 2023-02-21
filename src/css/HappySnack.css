@@ -6,6 +6,7 @@
     overflow: scroll;
     overflow-x: hidden;
     margin-top: 10px;
+    margin-bottom: 10px;
     display:grid;
     width:278px;
     row-gap:6px;

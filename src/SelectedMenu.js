@@ -8,12 +8,12 @@ const SelectedMenu=({Infos, clicked, setOrder})=> { // 선택된 메뉴 //각 �
       <div className="menuSelectBox" onClick={()=>{clicked(); 
         setOrder(Infos);} }>
         <div style={{cursor:"default"}}>
-          <img src={Infos.img_src} width="85px" height="60px"/>
-          <div style={{ display:"flex",height:"26.67px",width :"72px",alignItems:"flex-end",fontWeight :"500",textAlign:"left",margin:"auto"}}>{Infos.name} </div>
-          <div style={{fontWeight: "700"}}>₩{Infos.price} {Infos.calory}Kcal</div>
+          <img src={Infos.img_src} width="85px" height="60px" loading="lazy"/>
+          <div style={{ display:"flex",height:"39px",width:"75px",alignItems:"flex-end",fontWeight :"500",textAlign:"left",margin:"auto"}}>{Infos.name} </div>
+          <div style={{ display:"flex",fontWeight: "700",marginLeft:"6px"}}>₩{Infos.price} {Infos.calory}Kcal</div>
         </div>
     </div>
-  </div>
+    </div>
   )
 }
 

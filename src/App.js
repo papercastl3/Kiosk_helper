@@ -19,12 +19,13 @@ function App() {
   }
   return (
     <div className="App">
-      <Fade cascade damping={0.15} fraction={1} triggerOnce="true" >
+      <Fade triggerOnce="true" >
       <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-        <h2>키오스크 연습용 사이트</h2>
+        <h2 style={{marginBottom:"2px"}}>키오스크 연습용 사이트</h2>
         {/* <div className="ZoomInOutBtn" onClick={ZoomIn}>확대하기</div>
         <div className="ZoomInOutBtn" onClick={ZoomOut}>축소하기</div> */}
       </div>
+      <p style={{margin : "0 0 0 0"}}>ctrl키를 누르면서 마우스휠을 돌리면 확대가 됩니다</p>
       <Kiosk></Kiosk>
       <div style={{display:"flex",justifyContent:"center"}}>
       <p style={{marginBottom:"5px",fontWeight:"600"}}>

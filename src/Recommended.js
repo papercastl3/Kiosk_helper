@@ -95,16 +95,16 @@ function Recommended({clicked,setOrder}) {
   return (
     <div className="rightMenu" style={{overflowY:"hidden"}}>
       <h1 style={{textAlign:"left", marginBottom:"10px"}}>추천메뉴</h1>
-      <Fade direction="up"  duration="700" fraction={1} triggerOnce="true">
       <div style={{textAlign:"left", marginBottom:"5px",fontSize:"12px",fontWeight: "400",lineHeight: "15px"}}></div>
-      <div className="RecommendedGrid" style={{overflowY:"hidden"}}>
-      {RecommendInfos.map((v) =>{
-          return(
-            <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
-          );
-        })}
-    </div>
-    </Fade>
+      <Fade className="gridWrap" direction="up"  duration="700" fraction={0} triggerOnce="true">
+        <div className="RecommendedGrid" style={{overflowY:"hidden"}}>
+          {RecommendInfos.map((v) =>{
+              return(
+                <SelectedMenu Infos={v} clicked={clicked} setOrder={setOrder} key={v.name.toString()}/>
+              );
+            })}
+        </div>
+      </Fade>
     </div>
   );
 }

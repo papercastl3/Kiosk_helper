@@ -11,6 +11,7 @@
     height: 691px;
     background: #373535;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position:absolute;
     display:flex;
 }
 
@@ -112,6 +113,8 @@
 }
 
 .bottom{ /*키오스크 아래쪽*/
+    position: relative;
+    top:691px;
     width: 470px;
     height: 216px;
     background: #373535;

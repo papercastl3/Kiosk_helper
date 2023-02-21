@@ -3,10 +3,11 @@
     width: 434px;
     height: 656px;
     background: #FFFCFC;
-    opacity: 97%;
+    opacity: 97.5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 
@@ -52,12 +53,12 @@
     height: 32px;
     background: #FFFFFF;
     border: 0.5px solid rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 12px;
+    margin-bottom: 10px;
 }
 
 .littleModal{
@@ -134,4 +135,63 @@
     display: flex;
     align-items: center;
     justify-content:center;
+}
+
+.headerContainer{
+    margin-top: 10px;
+    width :434px;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.NameAndCalBox{
+    margin-top: 20px;
+    width:320px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.nutriBox{
+    box-sizing: border-box;
+    width: 120px;
+    height: 24px;
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 8px;
+    line-height: 12px;
+    color: #000000;
+    margin-right:20px;
+    margin-left:2px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+    font-weight:500;
+}
+
+.SelectingBox{
+    width:300px;
+    height: 485px;
+    margin-left: 110px;
+    margin-top: 30px;
+    display:flex;
+}
+.orderFlowBox{
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: absolute;
+    font-size: 10px;
+    left:0;
+    top:72px;
+}
+.flowBox{
+    box-sizing: border-box;
+    width:90px;
+    height: 48px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
